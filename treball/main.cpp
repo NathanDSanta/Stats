@@ -4,8 +4,8 @@ using namespace std;
 using namespace std::chrono;
 
 const int N_ALGORITMES = 4;
-const int N_MIDES = 6;
-const int MIDES[N_MIDES] = {500, 5000, 10000, 50000, 100000, 1000000};
+const int N_MIDES = 5;
+const int MIDES[N_MIDES] = {500, 5000, 10000, 50000, 100000};
 const int SEEDS[3] = {21, 1, 2002};
 const string ALGORITHMS[N_ALGORITMES] = {"BubbleSort", "SelectionSort",
                                          "QuickSort", "MergeSort"
