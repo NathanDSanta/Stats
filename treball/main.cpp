@@ -170,13 +170,13 @@ int main() {
 			// cout << arr[1] << endl;
 			// printArray(arr, size);
 			cout << "Test1: " << (testSorted(arr, size) ? "passed" : "failed")
-			     << " Algorithm: " << ALGORITHMS[j] << "Size: " << size << endl;
+			     << " Algorithm: " << ALGORITHMS[j] << " Size: " << size << endl;
 			auto start = high_resolution_clock::now();
 			callbacks[j](arr, size);
 			auto stop = high_resolution_clock::now();
 			auto duration = duration_cast<microseconds>(stop - start);
 			cout << "Test2: " << (testSorted(arr, size) ? "passed" : "failed")
-			     << " Algorithm: " << ALGORITHMS[j] << "Size: " << size << endl;
+			     << " Algorithm: " << ALGORITHMS[j] << " Size: " << size << endl;
 			double time = duration.count();
 			cout << "Execution Time:  " << time << endl;
 			durations[j][i] = time;
