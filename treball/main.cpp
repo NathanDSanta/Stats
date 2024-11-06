@@ -227,8 +227,8 @@ void resumen(int **duration) {
 			cout << "    ";
 			cout << "Size: " << MIDES[j] << endl;
 			cout << "    ";
-			cout << "Execution Time => Seconds: " << duration[i][j] % 1000000
-			     << " Miliseconds: " << duration[i][j] % 1000
+			cout << "Execution Time => Seconds: " << duration[i][j] / 1000000
+			     << " Miliseconds: " << duration[i][j] / 1000
 			     << " Microseconds: " << duration[i][j] << endl;
 		}
 	}
@@ -240,7 +240,9 @@ void resumenall(int ***durationsseed, int **durationsgood, int **durationsbad) {
 		resumen(durationsseed[i]);
 	}
 
+	cout << "Favorable Case: " << endl;
 	resumen(durationsgood);
+	cout << "Unfavorable Case: " << endl;
 	resumen(durationsbad);
 }
 
