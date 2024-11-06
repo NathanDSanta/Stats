@@ -1,15 +1,19 @@
 #include <chrono>
 #include <iostream>
+#include <string>
 using namespace std;
 using namespace std::chrono;
 
 const int N_ALGORITMES = 4;
 const int N_MIDES = 5;
+const int N_SEEDS = 3;
+const int N_ITER_GOOD = 10;
 const int MIDES[N_MIDES] = {500, 5000, 10000, 50000, 100000};
-const int SEEDS[3] = {21, 1, 2002};
+const int SEEDS[N_SEEDS] = {21, 1, 2002};
 const string ALGORITHMS[N_ALGORITMES] = {"BubbleSort", "SelectionSort",
                                          "QuickSort", "MergeSort"
                                         };
+const string CREATE_FUNTIONS[3] = {"Random => Seed: ", "Good", "Bad"};
 
 // Algoritmes
 
@@ -137,11 +141,40 @@ void printArray(int arr[], int size) {
 	cerr << endl;
 }
 
-int *createArray(int size) {
+int *createArrayRand(int size) {
 	int *array = new int[size];
 
 	for (int i = 0; i < size; i++)
 		array[i] = rand() % size;
+
+	return array;
+}
+
+void intercambiar_random(int arr[], int size) {
+	int a = rand() % size;
+	int b = rand() % size;
+	int temp = arr[a];
+	arr[a] = arr[b];
+	arr[b] = temp;
+}
+
+int *createArrayGood(int size) {
+	int *array = new int[size];
+
+	for (int i = 0; i < size; i++)
+		array[i] = i;
+
+	for (int i = 0; i < N_ITER_GOOD; i++)
+		intercambiar_random(array, size);
+
+	return array;
+}
+
+int *createArrayBad(int size) {
+	int *array = new int[size];
+
+	for (int i = 0; i < size; i++)
+		array[i] = size - i;
 
 	return array;
 }
@@ -156,44 +189,58 @@ bool testSorted(int arr[], int size) {
 	return true;
 }
 
+void test_algorithm(void (*func[])(int arr[], int size),
+                    int *(*createFunc)(int size), int createFunction,
+                    int **durations, int i, int j, int s) {
+	int size = MIDES[i];
+	int *arr = createFunc(size);
+	// cout << arr[1] << endl;
+	// printArray(arr, size);
+	cout << "Before: " << (testSorted(arr, size) ? "passed" : "failed") << endl;
+	auto start = high_resolution_clock::now();
+	callbacks[j](arr, size);
+	auto stop = high_resolution_clock::now();
+	auto duration = duration_cast<microseconds>(stop - start);
+	auto milisegons = duration_cast<milliseconds>(stop - start);
+	auto segons = duration_cast<seconds>(stop - start);
+	cout << "After: " << (testSorted(arr, size) ? "passed" : "failed")
+	     << "\nAlgorithm: " << ALGORITHMS[j] << "\nSize: " << size
+	     << "\nArray Creation Method: " << CREATE_FUNTIONS[createFunction]
+	     << ((createFunction == 0) ? to_string(SEEDS[s]) : "") << endl;
+	double time = duration.count();
+	cout << "Execution Time:  " << endl;
+	cout << "\tIn Seconds: " << segons.count() << endl
+	     << "\tIn Milliseconds: " << milisegons.count() << endl
+	     << "\tIn Microseconds: " << duration.count() << endl
+	     << endl;
+	durations[j][i] = time;
+	delete[] arr;
+}
+
 int main() {
-	srand(SEEDS[1]);
-	int **durations = new int *[N_ALGORITMES];
+	for (int s = 0; s < N_SEEDS; s++) {
+		srand(SEEDS[s]);
+		int **durations = new int *[N_ALGORITMES];
 
-	for (int i = 0; i < N_ALGORITMES; i++)
-		durations[i] = new int[N_MIDES];
+		for (int i = 0; i < N_ALGORITMES; i++)
+			durations[i] = new int[N_MIDES];
 
-	for (int i = 0; i < N_MIDES; i++) {
-		for (int j = 0; j < N_ALGORITMES; j++) {
-			int size = MIDES[i];
-			int *arr = createArray(size);
-			// cout << arr[1] << endl;
-			// printArray(arr, size);
-			cout << "Test1: " << (testSorted(arr, size) ? "passed" : "failed")
-			     << " Algorithm: " << ALGORITHMS[j] << " Size: " << size << endl;
-			auto start = high_resolution_clock::now();
-			callbacks[j](arr, size);
-			auto stop = high_resolution_clock::now();
-			auto duration = duration_cast<microseconds>(stop - start);
-			cout << "Test2: " << (testSorted(arr, size) ? "passed" : "failed")
-			     << " Algorithm: " << ALGORITHMS[j] << " Size: " << size << endl;
-			double time = duration.count();
-			cout << "Execution Time:  " << time << endl;
-			durations[j][i] = time;
-			delete[] arr;
+		for (int i = 0; i < N_MIDES; i++) {
+			for (int j = 0; j < N_ALGORITMES; j++)
+				test_algorithm(callbacks, createArrayRand, 0, durations, i, j, s);
 		}
 	}
 
 	// // Creacio de les matriu que conte totes les arrays
 	// int **baseMatrix = new int *[N_ALGORITMES];
 	//
-	// for (int i = 0; i < N_MIDES; i++)
+	// for (int  i = 0; i < N_MIDES; i++)
 	// baseMatrix[i] = createArray(MIDES[i]);
 	//
 	// cerr << "Base Arrays: ";
 	// printArrays(baseMatrix);
 	// // Agrupant les matrius en una sola
-	// int ***allMatrixes = new int **[N_ALGORITMES];
+	// int ***a llMatrixes = new int **[N_ALGORITMES];
 	//
 	// for (int i = 0; i < N_ALGORITMES; i++)
 	// allMatrixes[i] = copyArrays(baseMatrix);
