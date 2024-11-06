@@ -189,7 +189,7 @@ bool testSorted(int arr[], int size) {
 	return true;
 }
 
-void test_algorithm(void (*func[])(int arr[], int size),
+bool test_algorithm(void (*func[])(int arr[], int size),
                     int *(*createFunc)(int size), int createFunction,
                     int **durations, int i, int j, int s = 0) {
 	int size = MIDES[i];
@@ -203,7 +203,8 @@ void test_algorithm(void (*func[])(int arr[], int size),
 	auto duration = duration_cast<microseconds>(stop - start);
 	auto milisegons = duration_cast<milliseconds>(stop - start);
 	auto segons = duration_cast<seconds>(stop - start);
-	cout << "After: " << (testSorted(arr, size) ? "passed" : "failed")
+	bool aftertest = testSorted(arr, size);
+	cout << "After: " << (aftertest ? "passed" : "failed")
 	     << "\nAlgorithm: " << ALGORITHMS[j] << "\nSize: " << size
 	     << "\nArray Creation Method: " << CREATE_FUNTIONS[createFunction]
 	     << ((createFunction == 0) ? to_string(SEEDS[s]) : "") << endl;
@@ -215,6 +216,7 @@ void test_algorithm(void (*func[])(int arr[], int size),
 	     << endl;
 	durations[j][i] = time;
 	delete[] arr;
+	return aftertest;
 }
 
 void resumen(int **duration) {
@@ -224,6 +226,7 @@ void resumen(int **duration) {
 		for (int j = 0; j < N_MIDES; j++) {
 			cout << "    ";
 			cout << "Size: " << MIDES[j] << endl;
+			cout << "    ";
 			cout << "Execution Time => Seconds: " << duration[i][j] % 1000000
 			     << " Miliseconds: " << duration[i][j] % 1000
 			     << " Microseconds: " << duration[i][j] << endl;
@@ -242,6 +245,7 @@ void resumenall(int ***durationsseed, int **durationsgood, int **durationsbad) {
 }
 
 int main() {
+	bool allTestsPassed = true;
 	int ***durationsSeed = new int **[N_SEEDS];
 
 	for (int s = 0; s < N_SEEDS; s++) {
@@ -252,9 +256,13 @@ int main() {
 			durationsSeed[s][i] = new int[N_MIDES];
 
 		for (int i = 0; i < N_MIDES; i++) {
-			for (int j = 0; j < N_ALGORITMES; j++)
-				test_algorithm(callbacks, createArrayRand, 0, durationsSeed[s], i, j,
-				               s);
+			for (int j = 0; j < N_ALGORITMES; j++) {
+				bool passed = test_algorithm(callbacks, createArrayRand, 0,
+				                             durationsSeed[s], i, j, s);
+
+				if (!passed)
+					allTestsPassed = false;
+			}
 		}
 	}
 
@@ -264,8 +272,13 @@ int main() {
 		durationsgood[i] = new int[N_MIDES];
 
 	for (int i = 0; i < N_MIDES; i++) {
-		for (int j = 0; j < N_ALGORITMES; j++)
-			test_algorithm(callbacks, createArrayGood, 0, durationsgood, i, j);
+		for (int j = 0; j < N_ALGORITMES; j++) {
+			bool passed =
+			    test_algorithm(callbacks, createArrayGood, 0, durationsgood, i, j);
+
+			if (!passed)
+				allTestsPassed = false;
+		}
 	}
 
 	int **durationsbad = new int *[N_ALGORITMES];
@@ -274,9 +287,19 @@ int main() {
 		durationsbad[i] = new int[N_MIDES];
 
 	for (int i = 0; i < N_MIDES; i++) {
-		for (int j = 0; j < N_ALGORITMES; j++)
-			test_algorithm(callbacks, createArrayBad, 0, durationsbad, i, j);
+		for (int j = 0; j < N_ALGORITMES; j++) {
+			bool passed =
+			    test_algorithm(callbacks, createArrayBad, 0, durationsbad, i, j);
+
+			if (!passed)
+				allTestsPassed = false;
+		}
 	}
+
+	if (allTestsPassed)
+		cout << "All Tests Passed! " << endl;
+	else
+		cout << "Test Failed! " << endl;
 
 	resumenall(durationsSeed, durationsgood, durationsbad);
 	return 0;
