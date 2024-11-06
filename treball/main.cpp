@@ -191,7 +191,7 @@ bool testSorted(int arr[], int size) {
 
 void test_algorithm(void (*func[])(int arr[], int size),
                     int *(*createFunc)(int size), int createFunction,
-                    int **durations, int i, int j, int s) {
+                    int **durations, int i, int j, int s = 0) {
 	int size = MIDES[i];
 	int *arr = createFunc(size);
 	// cout << arr[1] << endl;
@@ -217,55 +217,67 @@ void test_algorithm(void (*func[])(int arr[], int size),
 	delete[] arr;
 }
 
+void resumen(int **duration) {
+	for (int i = 0; i < N_ALGORITMES; i++) {
+		cout << "  Algorithm: " << ALGORITHMS[i] << endl;
+
+		for (int j = 0; j < N_MIDES; j++) {
+			cout << "    ";
+			cout << "Size: " << MIDES[j] << endl;
+			cout << "Execution Time => Seconds: " << duration[i][j] % 1000000
+			     << " Miliseconds: " << duration[i][j] % 1000
+			     << " Microseconds: " << duration[i][j] << endl;
+		}
+	}
+}
+
+void resumenall(int ***durationsseed, int **durationsgood, int **durationsbad) {
+	for (int i = 0; i < N_SEEDS; i++) {
+		cout << "Seed: " << SEEDS[i] << endl;
+		resumen(durationsseed[i]);
+	}
+
+	resumen(durationsgood);
+	resumen(durationsbad);
+}
+
 int main() {
+	int ***durationsSeed = new int **[N_SEEDS];
+
 	for (int s = 0; s < N_SEEDS; s++) {
 		srand(SEEDS[s]);
-		int **durations = new int *[N_ALGORITMES];
+		durationsSeed[s] = new int *[N_ALGORITMES];
 
 		for (int i = 0; i < N_ALGORITMES; i++)
-			durations[i] = new int[N_MIDES];
+			durationsSeed[s][i] = new int[N_MIDES];
 
 		for (int i = 0; i < N_MIDES; i++) {
 			for (int j = 0; j < N_ALGORITMES; j++)
-				test_algorithm(callbacks, createArrayRand, 0, durations, i, j, s);
+				test_algorithm(callbacks, createArrayRand, 0, durationsSeed[s], i, j,
+				               s);
 		}
 	}
 
-	// // Creacio de les matriu que conte totes les arrays
-	// int **baseMatrix = new int *[N_ALGORITMES];
-	//
-	// for (int  i = 0; i < N_MIDES; i++)
-	// baseMatrix[i] = createArray(MIDES[i]);
-	//
-	// cerr << "Base Arrays: ";
-	// printArrays(baseMatrix);
-	// // Agrupant les matrius en una sola
-	// int ***a llMatrixes = new int **[N_ALGORITMES];
-	//
-	// for (int i = 0; i < N_ALGORITMES; i++)
-	// allMatrixes[i] = copyArrays(baseMatrix);
-	//
-	// // Matriu per als temps d'execucio
-	// double durations[N_ALGORITMES][N_MIDES];
-	//
-	// // Executant els algoritmes
-	// for (int i = 0; i < N_ALGORITMES; i++) {
-	// for (int j = 0; j < N_MIDES; j++) {
-	// auto start = high_resolution_clock::now();
-	// callbacks[i](allMatrixes[i][j], MIDES[j]);
-	// auto stop = high_resolution_clock::now();
-	// auto duration = duration_cast<microseconds>(stop - start);
-	// durations[i][j] = duration.count();
-	// }
-	// }
-	//
-	// for (int i = 0; i < N_ALGORITMES; i++) {
-	// for (int j = 0; j < N_MIDES; j++)
-	// delete[] allMatrixes[i][j];
-	//
-	// delete[] allMatrixes[i];
-	// }
-	//
-	// delete[] allMatrixes;
+	int **durationsgood = new int *[N_ALGORITMES];
+
+	for (int i = 0; i < N_ALGORITMES; i++)
+		durationsgood[i] = new int[N_MIDES];
+
+	for (int i = 0; i < N_MIDES; i++) {
+		for (int j = 0; j < N_ALGORITMES; j++)
+			test_algorithm(callbacks, createArrayGood, 0, durationsgood, i, j);
+	}
+
+	int **durationsbad = new int *[N_ALGORITMES];
+
+	for (int i = 0; i < N_ALGORITMES; i++)
+		durationsbad[i] = new int[N_MIDES];
+
+	for (int i = 0; i < N_MIDES; i++) {
+		for (int j = 0; j < N_ALGORITMES; j++)
+			test_algorithm(callbacks, createArrayBad, 0, durationsbad, i, j);
+	}
+
+	resumenall(durationsSeed, durationsgood, durationsbad);
 	return 0;
 }
