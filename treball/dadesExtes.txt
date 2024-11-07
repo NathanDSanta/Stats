@@ -1,0 +1,1226 @@
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 500
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 973
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 500
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 728
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 500
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 99
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 500
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 105
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 5000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 32
+	In Microseconds: 32383
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 5000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 23
+	In Microseconds: 23104
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 5000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 463
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 5000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 481
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 10000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 123
+	In Microseconds: 123369
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 10000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 92
+	In Microseconds: 92376
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 10000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 1
+	In Microseconds: 1015
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 10000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 1
+	In Microseconds: 1018
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 50000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 5
+	In Milliseconds: 5030
+	In Microseconds: 5030716
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 50000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 2
+	In Milliseconds: 2290
+	In Microseconds: 2290249
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 50000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 6
+	In Microseconds: 6165
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 50000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 5
+	In Microseconds: 5820
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 100000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 21
+	In Milliseconds: 21624
+	In Microseconds: 21624236
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 100000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 9
+	In Milliseconds: 9227
+	In Microseconds: 9227423
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 100000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 13
+	In Microseconds: 13386
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 100000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 12
+	In Microseconds: 12250
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 500
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 354
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 500
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 269
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 500
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 44
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 500
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 40
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 5000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 30
+	In Microseconds: 30397
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 5000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 23
+	In Microseconds: 23524
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 5000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 460
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 5000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 452
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 10000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 127
+	In Microseconds: 127693
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 10000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 91
+	In Microseconds: 91978
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 10000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 1
+	In Microseconds: 1070
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 10000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 1
+	In Microseconds: 1049
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 50000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 5
+	In Milliseconds: 5254
+	In Microseconds: 5254236
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 50000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 2
+	In Milliseconds: 2313
+	In Microseconds: 2313786
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 50000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 6
+	In Microseconds: 6947
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 50000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 5
+	In Microseconds: 5789
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 100000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 22
+	In Milliseconds: 22403
+	In Microseconds: 22403393
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 100000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 9
+	In Milliseconds: 9409
+	In Microseconds: 9409887
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 100000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 13
+	In Microseconds: 13577
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 100000
+Array Creation Method: Random => Seed: 1
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 12
+	In Microseconds: 12599
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 500
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 348
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 500
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 268
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 500
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 36
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 500
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 41
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 5000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 30
+	In Microseconds: 30511
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 5000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 24
+	In Microseconds: 24097
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 5000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 511
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 5000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 480
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 10000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 129
+	In Microseconds: 129677
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 10000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 97
+	In Microseconds: 97088
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 10000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 1
+	In Microseconds: 1102
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 10000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 1
+	In Microseconds: 1085
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 50000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 5
+	In Milliseconds: 5485
+	In Microseconds: 5485316
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 50000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 2
+	In Milliseconds: 2352
+	In Microseconds: 2352977
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 50000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 6
+	In Microseconds: 6448
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 50000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 6
+	In Microseconds: 6033
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 100000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 22
+	In Milliseconds: 22775
+	In Microseconds: 22775931
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 100000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 9
+	In Milliseconds: 9509
+	In Microseconds: 9509118
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 100000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 13
+	In Microseconds: 13827
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 100000
+Array Creation Method: Random => Seed: 2002
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 12
+	In Microseconds: 12390
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 500
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 236
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 500
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 262
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 500
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 97
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 500
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 27
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 5000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 21
+	In Microseconds: 21623
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 5000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 23
+	In Microseconds: 23753
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 5000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 9
+	In Microseconds: 9170
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 5000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 293
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 10000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 85
+	In Microseconds: 85734
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 10000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 95
+	In Microseconds: 95211
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 10000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 33
+	In Microseconds: 33903
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 10000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 641
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 50000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 2
+	In Milliseconds: 2166
+	In Microseconds: 2166049
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 50000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 2
+	In Milliseconds: 2338
+	In Microseconds: 2338841
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 50000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 814
+	In Microseconds: 814487
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 50000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 3
+	In Microseconds: 3519
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 100000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 8
+	In Milliseconds: 8717
+	In Microseconds: 8717117
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 100000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 9
+	In Milliseconds: 9510
+	In Microseconds: 9510341
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 100000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 4
+	In Milliseconds: 4250
+	In Microseconds: 4250628
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 100000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 8
+	In Microseconds: 8406
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 500
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 435
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 500
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 280
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 500
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 572
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 500
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 25
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 5000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 42
+	In Microseconds: 42398
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 5000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 24
+	In Microseconds: 24719
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 5000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 52
+	In Microseconds: 52369
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 5000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 304
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 10000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 160
+	In Microseconds: 160382
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 10000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 91
+	In Microseconds: 91025
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 10000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 194
+	In Microseconds: 194086
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 10000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 0
+	In Microseconds: 598
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 50000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 3
+	In Milliseconds: 3762
+	In Microseconds: 3762648
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 50000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 2
+	In Milliseconds: 2126
+	In Microseconds: 2126765
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 50000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 4
+	In Milliseconds: 4782
+	In Microseconds: 4782342
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 50000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 3
+	In Microseconds: 3476
+
+Before: failed
+After: passed
+Algorithm: BubbleSort
+Size: 100000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 14
+	In Milliseconds: 14991
+	In Microseconds: 14991956
+
+Before: failed
+After: passed
+Algorithm: SelectionSort
+Size: 100000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 8
+	In Milliseconds: 8492
+	In Microseconds: 8492889
+
+Before: failed
+After: passed
+Algorithm: QuickSort
+Size: 100000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 19
+	In Milliseconds: 19363
+	In Microseconds: 19363119
+
+Before: failed
+After: passed
+Algorithm: MergeSort
+Size: 100000
+Array Creation Method: Random => Seed: 21
+Execution Time:  
+	In Seconds: 0
+	In Milliseconds: 7
+	In Microseconds: 7272
+
+All Tests Passed! 
+Seed: 21
+  Algorithm: BubbleSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 973
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 32 Microseconds: 32383
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 123 Microseconds: 123369
+    Size: 50000
+    Execution Time => Seconds: 5 Miliseconds: 5030 Microseconds: 5030716
+    Size: 100000
+    Execution Time => Seconds: 21 Miliseconds: 21624 Microseconds: 21624236
+  Algorithm: SelectionSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 728
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 23 Microseconds: 23104
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 92 Microseconds: 92376
+    Size: 50000
+    Execution Time => Seconds: 2 Miliseconds: 2290 Microseconds: 2290249
+    Size: 100000
+    Execution Time => Seconds: 9 Miliseconds: 9227 Microseconds: 9227423
+  Algorithm: QuickSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 99
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 463
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 1 Microseconds: 1015
+    Size: 50000
+    Execution Time => Seconds: 0 Miliseconds: 6 Microseconds: 6165
+    Size: 100000
+    Execution Time => Seconds: 0 Miliseconds: 13 Microseconds: 13386
+  Algorithm: MergeSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 105
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 481
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 1 Microseconds: 1018
+    Size: 50000
+    Execution Time => Seconds: 0 Miliseconds: 5 Microseconds: 5820
+    Size: 100000
+    Execution Time => Seconds: 0 Miliseconds: 12 Microseconds: 12250
+Seed: 1
+  Algorithm: BubbleSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 354
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 30 Microseconds: 30397
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 127 Microseconds: 127693
+    Size: 50000
+    Execution Time => Seconds: 5 Miliseconds: 5254 Microseconds: 5254236
+    Size: 100000
+    Execution Time => Seconds: 22 Miliseconds: 22403 Microseconds: 22403393
+  Algorithm: SelectionSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 269
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 23 Microseconds: 23524
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 91 Microseconds: 91978
+    Size: 50000
+    Execution Time => Seconds: 2 Miliseconds: 2313 Microseconds: 2313786
+    Size: 100000
+    Execution Time => Seconds: 9 Miliseconds: 9409 Microseconds: 9409887
+  Algorithm: QuickSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 44
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 460
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 1 Microseconds: 1070
+    Size: 50000
+    Execution Time => Seconds: 0 Miliseconds: 6 Microseconds: 6947
+    Size: 100000
+    Execution Time => Seconds: 0 Miliseconds: 13 Microseconds: 13577
+  Algorithm: MergeSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 40
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 452
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 1 Microseconds: 1049
+    Size: 50000
+    Execution Time => Seconds: 0 Miliseconds: 5 Microseconds: 5789
+    Size: 100000
+    Execution Time => Seconds: 0 Miliseconds: 12 Microseconds: 12599
+Seed: 2002
+  Algorithm: BubbleSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 348
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 30 Microseconds: 30511
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 129 Microseconds: 129677
+    Size: 50000
+    Execution Time => Seconds: 5 Miliseconds: 5485 Microseconds: 5485316
+    Size: 100000
+    Execution Time => Seconds: 22 Miliseconds: 22775 Microseconds: 22775931
+  Algorithm: SelectionSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 268
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 24 Microseconds: 24097
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 97 Microseconds: 97088
+    Size: 50000
+    Execution Time => Seconds: 2 Miliseconds: 2352 Microseconds: 2352977
+    Size: 100000
+    Execution Time => Seconds: 9 Miliseconds: 9509 Microseconds: 9509118
+  Algorithm: QuickSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 36
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 511
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 1 Microseconds: 1102
+    Size: 50000
+    Execution Time => Seconds: 0 Miliseconds: 6 Microseconds: 6448
+    Size: 100000
+    Execution Time => Seconds: 0 Miliseconds: 13 Microseconds: 13827
+  Algorithm: MergeSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 41
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 480
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 1 Microseconds: 1085
+    Size: 50000
+    Execution Time => Seconds: 0 Miliseconds: 6 Microseconds: 6033
+    Size: 100000
+    Execution Time => Seconds: 0 Miliseconds: 12 Microseconds: 12390
+Favorable Case: 
+  Algorithm: BubbleSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 236
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 21 Microseconds: 21623
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 85 Microseconds: 85734
+    Size: 50000
+    Execution Time => Seconds: 2 Miliseconds: 2166 Microseconds: 2166049
+    Size: 100000
+    Execution Time => Seconds: 8 Miliseconds: 8717 Microseconds: 8717117
+  Algorithm: SelectionSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 262
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 23 Microseconds: 23753
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 95 Microseconds: 95211
+    Size: 50000
+    Execution Time => Seconds: 2 Miliseconds: 2338 Microseconds: 2338841
+    Size: 100000
+    Execution Time => Seconds: 9 Miliseconds: 9510 Microseconds: 9510341
+  Algorithm: QuickSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 97
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 9 Microseconds: 9170
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 33 Microseconds: 33903
+    Size: 50000
+    Execution Time => Seconds: 0 Miliseconds: 814 Microseconds: 814487
+    Size: 100000
+    Execution Time => Seconds: 4 Miliseconds: 4250 Microseconds: 4250628
+  Algorithm: MergeSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 27
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 293
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 641
+    Size: 50000
+    Execution Time => Seconds: 0 Miliseconds: 3 Microseconds: 3519
+    Size: 100000
+    Execution Time => Seconds: 0 Miliseconds: 8 Microseconds: 8406
+Unfavorable Case: 
+  Algorithm: BubbleSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 435
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 42 Microseconds: 42398
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 160 Microseconds: 160382
+    Size: 50000
+    Execution Time => Seconds: 3 Miliseconds: 3762 Microseconds: 3762648
+    Size: 100000
+    Execution Time => Seconds: 14 Miliseconds: 14991 Microseconds: 14991956
+  Algorithm: SelectionSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 280
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 24 Microseconds: 24719
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 91 Microseconds: 91025
+    Size: 50000
+    Execution Time => Seconds: 2 Miliseconds: 2126 Microseconds: 2126765
+    Size: 100000
+    Execution Time => Seconds: 8 Miliseconds: 8492 Microseconds: 8492889
+  Algorithm: QuickSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 572
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 52 Microseconds: 52369
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 194 Microseconds: 194086
+    Size: 50000
+    Execution Time => Seconds: 4 Miliseconds: 4782 Microseconds: 4782342
+    Size: 100000
+    Execution Time => Seconds: 19 Miliseconds: 19363 Microseconds: 19363119
+  Algorithm: MergeSort
+    Size: 500
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 25
+    Size: 5000
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 304
+    Size: 10000
+    Execution Time => Seconds: 0 Miliseconds: 0 Microseconds: 598
+    Size: 50000
+    Execution Time => Seconds: 0 Miliseconds: 3 Microseconds: 3476
+    Size: 100000
+    Execution Time => Seconds: 0 Miliseconds: 7 Microseconds: 7272

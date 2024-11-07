@@ -196,7 +196,7 @@ bool test_algorithm(void (*func[])(int arr[], int size),
 	int *arr = createFunc(size);
 	// cout << arr[1] << endl;
 	// printArray(arr, size);
-	cout << "Before: " << (testSorted(arr, size) ? "passed" : "failed") << endl;
+	cerr << "Before: " << (testSorted(arr, size) ? "passed" : "failed") << endl;
 	auto start = high_resolution_clock::now();
 	callbacks[j](arr, size);
 	auto stop = high_resolution_clock::now();
@@ -204,13 +204,13 @@ bool test_algorithm(void (*func[])(int arr[], int size),
 	auto milisegons = duration_cast<milliseconds>(stop - start);
 	auto segons = duration_cast<seconds>(stop - start);
 	bool aftertest = testSorted(arr, size);
-	cout << "After: " << (aftertest ? "passed" : "failed")
+	cerr << "After: " << (aftertest ? "passed" : "failed")
 	     << "\nAlgorithm: " << ALGORITHMS[j] << "\nSize: " << size
 	     << "\nArray Creation Method: " << CREATE_FUNTIONS[createFunction]
 	     << ((createFunction == 0) ? to_string(SEEDS[s]) : "") << endl;
 	double time = duration.count();
-	cout << "Execution Time:  " << endl;
-	cout << "\tIn Seconds: " << segons.count() << endl
+	cerr << "Execution Time:  " << endl;
+	cerr << "\tIn Seconds: " << segons.count() << endl
 	     << "\tIn Milliseconds: " << milisegons.count() << endl
 	     << "\tIn Microseconds: " << duration.count() << endl
 	     << endl;
