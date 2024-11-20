@@ -1,4 +1,4 @@
 library(Rcpp)
-sourceCpp("/home/nathan/Documents/uni/Stats/treball/dades.cpp")
+sourceCpp("dades.cpp")
 
 dades = createTables()

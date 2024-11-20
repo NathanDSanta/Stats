@@ -247,7 +247,8 @@ DataFrame createTables() {
         cout << "Log: " << SEEDS[s]
              << " " << ALGORITHMS[i]
              << " " << MIDES[j]
-             << " Temps: " << k  << durationsAll[s][i][j][k] << endl;;
+             << " " << k
+             << " Temps: " << durationsAll[s][i][j][k] << endl;;
         }
       }
     }
@@ -275,7 +276,8 @@ DataFrame createTables() {
         cout << "Log: Bad "
              << " " << ALGORITHMS[i]
              << " " << MIDES[j]
-             << " Temps: " << k << durationsAll[4][i][j][k] << endl;
+             << " " << k
+             << " Temps: " << durationsAll[4][i][j][k] << endl;
       }
     }
   }
