@@ -1,16 +1,18 @@
-// #include <Rcpp.h>
+ 
 #include <chrono>
+#include <iostream>
 #include <string>
 using namespace std;
 using namespace std::chrono;
-// using namespace Rcpp;
 
-const int N_EXPERIMENTS = 2;
+const int N_EXPERIMENTS = 5;
 const int N_ALGORITMES = 4;
-const int N_MIDES = 3;
+const int N_MIDES = 16;
 const int N_SEEDS = 3;
 const int N_ITER_GOOD = 10;
-const int MIDES[N_MIDES] = {500, 5000, 10000};
+const int MIDES[N_MIDES] = {50,    100,   200,   300,  400,  500,
+                            1000,  2000,  3000,  4000, 5000, 10000,
+                            20000, 30000, 40000, 50000};
 const int SEEDS[N_SEEDS] = {21, 1, 2002};
 const string ALGORITHMS[N_ALGORITMES] = {"BubbleSort", "SelectionSort",
                                          "QuickSort", "MergeSort"};
@@ -178,14 +180,14 @@ bool testSorted(int arr[], int size) {
   return true;
 }
 
-double test_algorithm(void (*func)(int arr[], int size), int size,
-                      int *(*createFunc)(int size)) {
+int test_algorithm(void (*func)(int arr[], int size), int size,
+                   int *(*createFunc)(int size)) {
   int *arr = createFunc(size);
   auto start = high_resolution_clock::now();
   func(arr, size);
   auto stop = high_resolution_clock::now();
   auto microsegons = duration_cast<microseconds>(stop - start);
-  double time = microsegons.count();
+  int time = microsegons.count();
   delete[] arr;
   return time;
 }
@@ -195,32 +197,31 @@ double test_algorithm(void (*func)(int arr[], int size), int size,
 //   CharacterVector algoritmes;
 //   IntegerVector mides;
 //   IntegerVector experiments;
-//   NumericVector durades;
+//   IntegerVector durades;
 //
-//   for (int i = 0; i < 5; i++) {
-//     for (int j = 0; j < N_ALGORITMES; j++) {
-//       for (int k = 0; k < N_MIDES; k++) {
-//         for(int l = 0; l < N_EXPERIMENTS; l++){
-//         seeds.push_back(STRING_SEEDS[i]);
-//         algoritmes.push_back(ALGORITHMS[j]);
-//         mides.push_back(MIDES[k]);
-//         experiments.push_back(l);
-//         durades.push_back(durations[i][j][k][l] / 1000.0);
+//   for (int s = 0; s < 5; s++) {
+//     for (int i = 0; i < N_ALGORITMES; i++) {
+//       for (int j = 0; j < N_MIDES; j++) {
+//         for (int k = 0; k < N_EXPERIMENTS; k++) {
+//           seeds.push_back(STRING_SEEDS[s]);
+//           algoritmes.push_back(ALGORITHMS[i]);
+//           mides.push_back(MIDES[j]);
+//           experiments.push_back(k);
+//           durades.push_back(durations[s][i][j][k]);
 //         }
 //       }
 //     }
 //   }
 //
-//   return DataFrame::create(Named("Temps (milisegons)") = durades,
-//                            Named("Seed (0 favorable, -1 desfavorable)") =
-//                            seeds, Named("Algoritme") = algoritmes,
+//   return DataFrame::create(Named("Temps (microsegons)") = durades,
+//                            Named("Seed (0 favorable, -1 desfavorable)") = seeds,
+//                            Named("Algoritme") = algoritmes,
 //                            Named("Mida") = mides,
 //                            Named("Experiment nr. ") = experiments);
 // }
 
 // [[Rcpp::export]]
 int main() {
-  bool allTestsPassed = true;
   int ****durationsAll = new int ***[5];
 
   for (int s = 0; s < 5; s++) {
@@ -239,9 +240,15 @@ int main() {
     LLAVOR = SEEDS[s];
     for (int i = 0; i < N_ALGORITMES; i++) {
       for (int j = 0; j < N_MIDES; j++) {
-        for (int k = 0; k < N_EXPERIMENTS; k++)
+        for (int k = 0; k < N_EXPERIMENTS; k++){
           durationsAll[s][i][j][k] =
               test_algorithm(callbacks[i], MIDES[j], createArrayRand);
+        cout << "Log: " << SEEDS[s]
+             << " " << ALGORITHMS[i]
+             << " " << MIDES[j]
+             << " " << k
+             << " Temps: " << durationsAll[s][i][j][k] << endl;;
+        }
       }
     }
   }
@@ -251,6 +258,11 @@ int main() {
       for (int k = 0; k < N_EXPERIMENTS; k++) {
         durationsAll[3][i][j][k] =
             test_algorithm(callbacks[i], MIDES[j], createArrayGood);
+        cout << "Log: Good "
+             << " " << ALGORITHMS[i]
+             << " " << MIDES[j]
+             << " " << k
+             << " Temps: " << durationsAll[3][i][j][k] << endl;
       }
     }
   }
@@ -260,6 +272,11 @@ int main() {
       for (int k = 0; k < N_EXPERIMENTS; k++) {
         durationsAll[4][i][j][k] =
             test_algorithm(callbacks[i], MIDES[j], createArrayBad);
+        cout << "Log: Bad "
+             << " " << ALGORITHMS[i]
+             << " " << MIDES[j]
+             << " " << k
+             << " Temps: " << durationsAll[4][i][j][k] << endl;
       }
     }
   }

@@ -6,7 +6,7 @@ using namespace std;
 using namespace std::chrono;
 using namespace Rcpp;
 
-const int N_EXPERIMENTS = 200;
+const int N_EXPERIMENTS = 5;
 const int N_ALGORITMES = 4;
 const int N_MIDES = 16;
 const int N_SEEDS = 3;
@@ -200,21 +200,22 @@ DataFrame createRTables(int ****durations) {
   IntegerVector experiments;
   IntegerVector durades;
 
-  for (int i = 0; i < 5; i++) {
-    for (int j = 0; j < N_ALGORITMES; j++) {
-      for (int k = 0; k < N_MIDES; k++) {
-        for (int l = 0; l < N_EXPERIMENTS; l++) {
-          seeds.push_back(STRING_SEEDS[i]);
-          algoritmes.push_back(ALGORITHMS[j]);
-          mides.push_back(MIDES[k]);
-          experiments.push_back(l);
-          durades.push_back(durations[i][j][k][l] / 1000.0);
+  for (int s = 0; s < 5; s++) {
+    for (int i = 0; i < N_ALGORITMES; i++) {
+      for (int j = 0; j < N_MIDES; j++) {
+        for (int k = 0; k < N_EXPERIMENTS; k++) {
+          cout << s << " " << i << " " << j << " " << k << endl;
+          seeds.push_back(STRING_SEEDS[s]);
+          algoritmes.push_back(ALGORITHMS[i]);
+          mides.push_back(MIDES[j]);
+          experiments.push_back(k);
+          durades.push_back(durations[s][i][j][k]);
         }
       }
     }
   }
 
-  return DataFrame::create(Named("Temps (milisegons)") = durades,
+  return DataFrame::create(Named("Temps (microsegons)") = durades,
                            Named("Seed (0 favorable, -1 desfavorable)") = seeds,
                            Named("Algoritme") = algoritmes,
                            Named("Mida") = mides,
