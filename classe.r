@@ -1,91 +1,107 @@
-library(ggplot2)
+setwd("~/Documents/uni/Stats")
 library(tidyverse)
+library(readxl)
+salaris <- read_excel("salary.xlsx")
 
-X <- c(
-  10.1, 10.8, 10.3, 10, 8.4, 8.7, 7.6, 8.3, 10.7, 9.4,
-  8.5, 9.3, 9.7, 10.5, 11.4, 10.2, 10.4, 8.2, 9.1, 9.6
-)
+y <- salaris$sl
 
-summary(X)
+SQT <- sum((y - mean(y))^2)
+SQT
 
-ggplot() +
-  geom_histogram(aes(x = X, y = after_stat(density)),
-    bins = 8,
-    col = "black", fill = "#E0E0E0"
-  ) +
-  geom_function(aes(col = "Normal"),
-    linewidth = 1,
-    fun = function(x) dnorm(x, mean(X), sd(X))
-  ) +
-  geom_function(aes(col = "Uniforme"),
-    linewidth = 1,
-    fun = function(x) dunif(x, min(X), max(X))
-  ) +
-  labs(
-    title = "Histograma d'X i densitats teòriques",
-    y = "Densitat", col = "Models"
-  )
+var(y)
+SQT / (52 - 1)
 
-dX <- tibble(x = sort(c(X, 7, 12)))
-dF <- mutate(dX,
-  Fx = sapply(x, function(x) mean(X <= x))
-)
-ggplot() +
-  geom_step(data = dF, aes(x = x, y = Fx)) +
-  geom_function(aes(col = "Normal"),
-    linewidth = 1,
-    fun = function(x) pnorm(x, mean(X), sd(X))
-  ) +
-  geom_function(aes(col = "Uniforme"),
-    linewidth = 1,
-    fun = function(x) punif(x, min(X), max(X))
-  ) +
-  labs(col = "Model", y = "Funció de distribució")
+m1 <- nls(sl ~ a * exp(b * yr), data = salaris, list(a = 15000, b = 0.2))
+m1
+coef(m1)
 
-dX <- tibble(x = sort(X))
-dF <- mutate(dX,
-  Fx = sapply(x, function(x) mean(X <= x))
-)
+a <- coef(m1)[1]
+b <- coef(m1)[2]
+f_ajustada <- function(x) a * exp(b * x)
+ggplot(data = salaris) +
+  geom_point(aes(x = yr, y = sl)) +
+  geom_function(fun = f_ajustada, col = "blue")
 
+m.yr <- lm(sl ~ yr, data = salaris)
+m.yr
 
-dF <- dF %>%
-  mutate(
-    Fx_norm = pnorm(x, mean(X), sd(X)),
-    Fx_unif = punif(x, min(X), max(X))
-  )
-ggplot(data = dF) +
-  geom_point(aes(x = Fx_norm, y = Fx, col = "Normal")) +
-  geom_point(aes(x = Fx_unif, y = Fx, col = "Uniforme")) +
-  geom_abline(intercept = 0, slope = 1, linetype = "dotted") +
-  labs(
-    x = "Funció de distribució teòrica",
-    y = "Funció de distribució de la mostra",
-    col = "Model"
-  )
+sum(residuals(m.yr)^2)
 
-dX <- tibble(x = sort(X))
-dQ <- mutate(dX,
-  prob = ppoints(n())
-)
+sum(residuals(m1)^2)
 
-dQ <- mutate(dQ,
-  qNorm = qexp((prob, mean = 1 / mean(X), sd = sd(X)),
-  qUnif = qunif(prob, min = min(X), max = max(X))
-)
-ggplot() +
-  geom_point(data = dQ, aes(x = qNorm, y = x, col = "Normal")) +
-  geom_point(data = dQ, aes(x = qUnif, y = x, col = "Uniforme")) +
-  geom_abline(intercept = 0, slope = 1, linetype = "dotted") +
-  labs(
-    col = "Models",
-    x = "Quantil teòric",
-    y = "Quantil mostral"
-  )
+a <- coef(m1)[1]
+b <- coef(m1)[2]
+f_ajustada <- function(x) a * exp(b * x)
+ggplot(data = salaris) +
+  geom_point(aes(x = yr, y = sl)) +
+  geom_function(fun = f_ajustada, col = "blue") +
+  geom_abline(intercept = 18166.1, slope = 752.8, col = "red")
 
-X2 <- c(
-  15.41, 27.46, 208.05, 7.76, 28.99, 68.56, 160.23, 19.37, 162.6, 2.37,
-  164.33, 31.59, 75.28, 20.81, 2.48, 110.82, 33.23, 23.76, 8.58, 6.4,
-  595.77, 5.9, 33.44, 47.47, 36.42, 21.44, 32.57, 158.37, 125.96, 29.71
-)
+SQR <- sum(residuals(m.yr)^2)
+SQR
 
-shapiro.test(X2)
+f.yr <- function(x) coef(m.yr)[1] + coef(m.yr)[2] * x
+sum((y - f.yr(salaris$yr))^2)
+
+1 - SQR / SQT
+
+SQM <- sum((mean(y) - f.yr(salaris$yr))^2)
+SQM
+
+SQM + SQR
+SQT
+
+m.yr_yd <- lm(sl ~ yr + yd, data = salaris)
+m.yr_yd
+
+library(scatterplot3d)
+s3d <- with(salaris, scatterplot3d(yr, yd, sl, angle = 60, box = FALSE))
+s3d$plane3d(m.yr_yd, col = "red")
+
+x_associate = as.integer(salaris$rk == 'associate')
+x_full = as.integer(salaris$rk == 'full')
+m.rk_manual = lm(sl~x_associate+x_full, salaris)
+m.rk_manual
+
+m.rk = lm(sl~rk, salaris)
+m.rk
+
+sl_mitja_model = tribble(~rk,~sl,
+                         'assistant', 17769,
+                         'associate', 17769+5407,
+                         'full', 17769+11890)
+
+ggplot(data=salaris) +
+  geom_jitter(aes(x = '', y = sl)) +
+  geom_hline(data = sl_mitja_model, aes(yintercept = sl)) +
+  facet_wrap(~rk)
+
+m.yr2 = lm(sl~yr+yr2, data = mutate(salaris, yr2 = yr^2))
+m.yr2
+
+SQR2 = sum(residuals(m.yr2)^2)
+SQR2
+
+(SQT-SQR2)/SQT
+
+ggplot(data=salaris) +
+  geom_point(aes(x = yr, y = sl)) +
+  geom_function(fun = function(x) 17644.157+926.432*x-9.064*x^2, col = 'red')
+
+m.rk_yr = lm(sl~rk+yr, data = salaris)
+ggplot(data = salaris) +
+  geom_point(aes(x = yr, y = sl, col = rk)) +
+  geom_abline(aes(intercept = 16203.3, slope = 375.7, col = 'assistant')) +
+  geom_abline(aes(intercept = 16203.3+4262.3, slope = 375.7, col = 'associate')) +
+  geom_abline(aes(intercept = 16203.3+9454.5, slope = 375.7, col = 'full'))
+
+m.rk_yr_inter = lm(sl~rk+yr+rk:yr, data = salaris)
+m.rk_yr_inter
+
+ggplot(data = salaris) +
+  geom_point(aes(x = yr, y = sl, col = rk)) +
+  geom_abline(aes(intercept = 16416.6, slope = 324.5, col = 'assistant')) +
+  geom_abline(aes(intercept = 16416.6+5354.2, slope = 324.5-129.7, col = 'associate')) +
+  geom_abline(aes(intercept = 16416.6+8176.4, slope = 324.5+151.2, col = 'full'))
+
+ 

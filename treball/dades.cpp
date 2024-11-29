@@ -6,7 +6,7 @@ using namespace std;
 using namespace std::chrono;
 using namespace Rcpp;
 
-const int N_EXPERIMENTS = 5;
+const int N_EXPERIMENTS = 50;
 const int N_ALGORITMES = 4;
 const int N_MIDES = 16;
 const int N_SEEDS = 3;
@@ -211,8 +211,11 @@ DataFrame createRTables(int ****durations) {
           experiments.push_back(k);
           durades.push_back(durations[s][i][j][k]);
         }
+        delete [] durations[s][i][j];
       }
+      delete [] durations[s][i];
     }
+    delete [] durations[s];
   }
 
   return DataFrame::create(Named("Temps (microsegons)") = durades,
