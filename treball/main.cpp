@@ -7,12 +7,11 @@ using namespace std::chrono;
 
 const int N_EXPERIMENTS = 5;
 const int N_ALGORITMES = 4;
-const int N_MIDES = 16;
+const int N_MIDES = 9;
 const int N_SEEDS = 3;
 const int N_ITER_GOOD = 10;
 const int MIDES[N_MIDES] = {50,    100,   200,   300,  400,  500,
-                            1000,  2000,  3000,  4000, 5000, 10000,
-                            20000, 30000, 40000, 50000};
+                            1000,  2000,  3000};
 const int SEEDS[N_SEEDS] = {21, 1, 2002};
 const string ALGORITHMS[N_ALGORITMES] = {"BubbleSort", "SelectionSort",
                                          "QuickSort", "MergeSort"};
