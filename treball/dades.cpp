@@ -1,4 +1,5 @@
 #include <Rcpp.h>
+
 #include <chrono>
 #include <iostream>
 #include <string>
@@ -13,7 +14,8 @@ const int N_ALGORITMES = 2;
 const int N_MIDES = 11;
 const int N_SEEDS = 3;
 const int N_ITER_GOOD = 10;
-const int MIDES[N_MIDES] = {50, 100, 200, 300, 400, 500, 1000, 2000, 3000, 4000,5000};
+const int MIDES[N_MIDES] = {50,   100,  200,  300,  400, 500,
+                            1000, 2000, 3000, 4000, 5000};
 const int SEEDS[N_SEEDS] = {21, 1, 2002};
 const string ALGORITHMS[N_ALGORITMES] = {"QuickSort", "MergeSort"};
 const string CREATE_FUNTIONS[3] = {"Random => Seed: ", "Good", "Bad"};
@@ -46,7 +48,8 @@ void selectionSort(int arr[], int size) {
     int minIndex = i;
 
     for (int j = i + 1; j < size; j++) {
-      if (arr[j] < arr[minIndex]) minIndex = j;
+      if (arr[j] < arr[minIndex])
+        minIndex = j;
     }
 
     swap(arr[i], arr[minIndex]);
@@ -82,9 +85,11 @@ void merge(int arr[], int left, int mid, int right) {
   int n2 = right - mid;
   int L[n1], R[n2];
 
-  for (i = 0; i < n1; i++) L[i] = arr[left + i];
+  for (i = 0; i < n1; i++)
+    L[i] = arr[left + i];
 
-  for (j = 0; j < n2; j++) R[j] = arr[mid + 1 + j];
+  for (j = 0; j < n2; j++)
+    R[j] = arr[mid + 1 + j];
 
   i = 0;
   j = 0;
@@ -124,20 +129,17 @@ void mergeSort(int arr[], int left, int right) {
   }
 }
 
-void qSort(int arr[], int size) {
-  quickSort(arr, 0, size - 1);
-}
+void qSort(int arr[], int size) { quickSort(arr, 0, size - 1); }
 
-void mSort(int arr[], int size) {
-  mergeSort(arr, 0, size - 1);
-}
+void mSort(int arr[], int size) { mergeSort(arr, 0, size - 1); }
 
 void (*callbacks[N_ALGORITMES])(int arr[], int size) = {qSort, mSort};
 
 int *createArrayRand(int size) {
   int *array = new int[size];
 
-  for (int i = 0; i < size; i++) array[i] = aleatori(size + 1);
+  for (int i = 0; i < size; i++)
+    array[i] = aleatori(size + 1);
 
   return array;
 }
@@ -153,9 +155,11 @@ void intercambiar_random(int arr[], int size) {
 int *createArrayGood(int size) {
   int *array = new int[size];
 
-  for (int i = 0; i < size; i++) array[i] = i;
+  for (int i = 0; i < size; i++)
+    array[i] = i;
 
-  for (int i = 0; i < N_ITER_GOOD; i++) intercambiar_random(array, size);
+  for (int i = 0; i < N_ITER_GOOD; i++)
+    intercambiar_random(array, size);
 
   return array;
 }
@@ -163,7 +167,8 @@ int *createArrayGood(int size) {
 int *createArrayBad(int size) {
   int *array = new int[size];
 
-  for (int i = 0; i < size; i++) array[i] = size - i;
+  for (int i = 0; i < size; i++)
+    array[i] = size - i;
 
   return array;
 }
@@ -171,12 +176,13 @@ int *createArrayBad(int size) {
 int countSorted(int arr[], int size) {
   int comptador = 0;
   for (int i = 1; i < size; i++)
-    if (arr[i - 1] > arr[i]) comptador++;
+    if (arr[i - 1] > arr[i])
+      comptador++;
 
   return comptador;
 }
 
-double test_vector(const int arr[], int size){
+double test_vector(const int arr[], int size) {
   int n_ordenats = 0;
   for (int i = 0; i < size * PERCENT_COEFICIENT_ALEATORITAT; i++) {
     int a = aleatori(size);
@@ -184,15 +190,16 @@ double test_vector(const int arr[], int size){
     while (b == a) {
       b = aleatori(size);
     }
-    if (a > b && arr[a] > arr[b]) n_ordenats++;
-    else if(a < b && arr[a] < arr[b]) n_ordenats++;
+    if (a > b && arr[a] > arr[b])
+      n_ordenats++;
+    else if (a < b && arr[a] < arr[b])
+      n_ordenats++;
   }
-  return (n_ordenats/(size * PERCENT_COEFICIENT_ALEATORITAT));
+  return (n_ordenats / (size * PERCENT_COEFICIENT_ALEATORITAT));
 }
 
-
 pair<int, double> test_algorithm(void (*func)(int arr[], int size), int size,
-                   int *(*createFunc)(int size)) {
+                                 int *(*createFunc)(int size)) {
   int *arr = createFunc(size);
   double coeficienAleatoritat = test_vector(arr, size);
   auto start = high_resolution_clock::now();
@@ -204,7 +211,8 @@ pair<int, double> test_algorithm(void (*func)(int arr[], int size), int size,
   return pair(time, coeficienAleatoritat);
 }
 
-DataFrame createRTables(int ****durations, double ****coeficientsAleatorietat) {
+DataFrame createRTables(int ****durations,
+                        double ****coeficientsAleatorietat) {
   CharacterVector seeds;
   CharacterVector algoritmes;
   IntegerVector mides;
@@ -228,12 +236,11 @@ DataFrame createRTables(int ****durations, double ****coeficientsAleatorietat) {
   }
 
   return DataFrame::create(Named("Temps (microsegons)") = durades,
-                           Named("Seed (0 favorable, -1 desfavorable)") =
-                           seeds, Named("Algoritme") = algoritmes,
+                           Named("Seed (0 favorable, -1 desfavorable)") = seeds,
+                           Named("Algoritme") = algoritmes,
                            Named("Mida") = mides,
                            Named("Experiment nr. ") = experiments,
-                           Named("Coeficient aleatorietat") = randomness
-                           );
+                           Named("Coeficient aleatorietat") = randomness);
 }
 
 // [[Rcpp::export]]
@@ -251,7 +258,7 @@ DataFrame createTables() {
 
       for (int j = 0; j < N_MIDES; j++) {
         durationsAll[s][i][j] = new int[N_EXPERIMENTS];
-        coeficientAleatoritat[s][i][j] = new double [N_EXPERIMENTS];
+        coeficientAleatoritat[s][i][j] = new double[N_EXPERIMENTS];
       }
     }
   }
@@ -261,12 +268,13 @@ DataFrame createTables() {
     for (int i = 0; i < N_ALGORITMES; i++) {
       for (int j = 0; j < N_MIDES; j++) {
         for (int k = 0; k < N_EXPERIMENTS; k++) {
-          pair<int, double> resultat = 
+          pair<int, double> resultat =
               test_algorithm(callbacks[i], MIDES[j], createArrayRand);
           durationsAll[s][i][j][k] = resultat.first;
           coeficientAleatoritat[s][i][j][k] = resultat.second;
           cout << "Log: " << SEEDS[s] << " " << ALGORITHMS[i] << " " << MIDES[j]
-               << " Ex: " << k << " Temps: " << durationsAll[s][i][j][k] << " Coeficient: " << coeficientAleatoritat[s][i][j][k] << endl;
+               << " Ex: " << k << " Temps: " << durationsAll[s][i][j][k]
+               << " Coeficient: " << coeficientAleatoritat[s][i][j][k] << endl;
           ;
         }
       }
@@ -276,13 +284,14 @@ DataFrame createTables() {
   for (int i = 0; i < N_ALGORITMES; i++) {
     for (int j = 0; j < N_MIDES; j++) {
       for (int k = 0; k < N_EXPERIMENTS; k++) {
-          pair<int, double> resultat = 
-              test_algorithm(callbacks[i], MIDES[j], createArrayGood);
-          durationsAll[3][i][j][k] = resultat.first;
-          coeficientAleatoritat[3][i][j][k] = resultat.second;
+        pair<int, double> resultat =
+            test_algorithm(callbacks[i], MIDES[j], createArrayGood);
+        durationsAll[3][i][j][k] = resultat.first;
+        coeficientAleatoritat[3][i][j][k] = resultat.second;
         cout << "Log: Good "
              << " " << ALGORITHMS[i] << " " << MIDES[j] << " Ex: " << k
-             << " Temps: " << durationsAll[3][i][j][k] << " Coeficient: " << coeficientAleatoritat[3][i][j][k] << endl;
+             << " Temps: " << durationsAll[3][i][j][k]
+             << " Coeficient: " << coeficientAleatoritat[3][i][j][k] << endl;
       }
     }
   }
@@ -290,13 +299,14 @@ DataFrame createTables() {
   for (int i = 0; i < N_ALGORITMES; i++) {
     for (int j = 0; j < N_MIDES; j++) {
       for (int k = 0; k < N_EXPERIMENTS; k++) {
-        pair<int, double> resultat = 
+        pair<int, double> resultat =
             test_algorithm(callbacks[i], MIDES[j], createArrayBad);
         durationsAll[4][i][j][k] = resultat.first;
         coeficientAleatoritat[4][i][j][k] = resultat.second;
         cout << "Log: Bad "
              << " " << ALGORITHMS[i] << " " << MIDES[j] << " Ex: " << k
-             << " Temps: " << durationsAll[4][i][j][k] << " Coeficient: " << coeficientAleatoritat[4][i][j][k] << endl;
+             << " Temps: " << durationsAll[4][i][j][k]
+             << " Coeficient: " << coeficientAleatoritat[4][i][j][k] << endl;
       }
     }
   }
