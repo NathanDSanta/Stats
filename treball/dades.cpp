@@ -30,32 +30,6 @@ int aleatori(int valor) {
   LLAVOR = LLAVOR * 1103515245 + 12345;
   return ((LLAVOR / 32) % 32768) % valor;
 }
-
-void bubbleSort(int arr[], int size) {
-  for (int i = 0; i < size - 1; i++) {
-    for (int j = 0; j < size - i - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        int temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-      }
-    }
-  }
-}
-
-void selectionSort(int arr[], int size) {
-  for (int i = 0; i < size - 1; i++) {
-    int minIndex = i;
-
-    for (int j = i + 1; j < size; j++) {
-      if (arr[j] < arr[minIndex])
-        minIndex = j;
-    }
-
-    swap(arr[i], arr[minIndex]);
-  }
-}
-
 int partition(int arr[], int low, int high) {
   int pivot = arr[high];
   int i = low - 1;
@@ -171,15 +145,6 @@ int *createArrayBad(int size) {
     array[i] = size - i;
 
   return array;
-}
-
-int countSorted(int arr[], int size) {
-  int comptador = 0;
-  for (int i = 1; i < size; i++)
-    if (arr[i - 1] > arr[i])
-      comptador++;
-
-  return comptador;
 }
 
 double test_vector(const int arr[], int size) {
